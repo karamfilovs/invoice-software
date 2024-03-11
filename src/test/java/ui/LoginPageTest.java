@@ -18,7 +18,7 @@ public class LoginPageTest {
     public void beforeEach() {
         //Do this before every test
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless=new"); //set headless execution
+        options.addArguments("--headless=new"); //set headless execution
         chrome = new ChromeDriver(options); // Start new chrome instance
         chrome.get(LOGIN_PAGE); //Navigate to login page (st2016.inv.bg)
     }
