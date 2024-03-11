@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
+
 public class LoginPageTest {
     private static final String EMAIL = System.getProperty("email", "dummy@gmail.com");
     private static final String PASSWORD = System.getProperty("password", "1212121");
@@ -21,6 +23,7 @@ public class LoginPageTest {
         options.addArguments("--headless=new"); //set headless execution
         chrome = new ChromeDriver(options); // Start new chrome instance
         chrome.get(LOGIN_PAGE); //Navigate to login page (st2016.inv.bg)
+        chrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterEach
