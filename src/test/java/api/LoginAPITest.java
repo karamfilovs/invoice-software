@@ -54,19 +54,6 @@ public class LoginAPITest {
         Assertions.assertEquals("Wrong username or password", error);
     }
 
-    @Test
-    @Tag("api")
-    @Tag("negative")
-    @DisplayName("Broken test")
-    public void brokenTest(){
-        //Send POST request to obtain token
-        Response response = LoginAPI.obtainToken(EMAIL, "blabla", "st2016");
-        //Check the status code
-        Assertions.assertEquals(402, response.statusCode());
-        //Check message
-        String error = response.then().extract().path("error");
-        Assertions.assertEquals("Wrong username or password", error);
-    }
 
 
 }
